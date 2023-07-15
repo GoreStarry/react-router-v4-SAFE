@@ -1507,7 +1507,7 @@ var Router = function (_React$Component) {
     };
   };
 
-  Router.prototype.componentWillMount = function componentWillMount() {
+  Router.prototype.UNSAFE_componentWillMount = function componentWillMount() {
     var _this2 = this;
 
     var _props = this.props,
@@ -1527,7 +1527,7 @@ var Router = function (_React$Component) {
     });
   };
 
-  Router.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+  Router.prototype.UNSAFE_componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
     warning_1(this.props.history === nextProps.history, 'You cannot change <Router history>');
   };
 
@@ -1574,7 +1574,7 @@ var MemoryRouter = function (_React$Component) {
     return _ret = (_temp = (_this = possibleConstructorReturn(this, _React$Component.call.apply(_React$Component, [this].concat(args))), _this), _this.history = createHistory(_this.props), _temp), possibleConstructorReturn(_this, _ret);
   }
 
-  MemoryRouter.prototype.componentWillMount = function componentWillMount() {
+  MemoryRouter.prototype.UNSAFE_componentWillMount = function componentWillMount() {
     warning_1(!this.props.history, '<MemoryRouter> ignores the history prop. To use a custom history, ' + 'use `import { Router }` instead of `import { MemoryRouter as Router }`.');
   };
 
@@ -1619,13 +1619,13 @@ var Prompt = function (_React$Component) {
     }
   };
 
-  Prompt.prototype.componentWillMount = function componentWillMount() {
+  Prompt.prototype.UNSAFE_componentWillMount = function componentWillMount() {
     invariant_1$2(this.context.router, 'You should not use <Prompt> outside a <Router>');
 
     if (this.props.when) this.enable(this.props.message);
   };
 
-  Prompt.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+  Prompt.prototype.UNSAFE_componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
     if (nextProps.when) {
       if (!this.props.when || this.props.message !== nextProps.message) this.enable(nextProps.message);
     } else {
@@ -1790,7 +1790,7 @@ var Redirect = function (_React$Component) {
     return this.context.router && this.context.router.staticContext;
   };
 
-  Redirect.prototype.componentWillMount = function componentWillMount() {
+  Redirect.prototype.UNSAFE_componentWillMount = function componentWillMount() {
     invariant_1$2(this.context.router, 'You should not use <Redirect> outside a <Router>');
 
     if (this.isStatic()) this.perform();
@@ -2406,7 +2406,7 @@ var Route = function (_React$Component) {
     return path ? matchPath(pathname, { path: path, strict: strict, exact: exact, sensitive: sensitive }) : route.match;
   };
 
-  Route.prototype.componentWillMount = function componentWillMount() {
+  Route.prototype.UNSAFE_componentWillMount = function componentWillMount() {
     warning_1(!(this.props.component && this.props.render), 'You should not use <Route component> and <Route render> in the same route; <Route render> will be ignored');
 
     warning_1(!(this.props.component && this.props.children && !isEmptyChildren(this.props.children)), 'You should not use <Route component> and <Route children> in the same route; <Route children> will be ignored');
@@ -2414,7 +2414,7 @@ var Route = function (_React$Component) {
     warning_1(!(this.props.render && this.props.children && !isEmptyChildren(this.props.children)), 'You should not use <Route render> and <Route children> in the same route; <Route children> will be ignored');
   };
 
-  Route.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps, nextContext) {
+  Route.prototype.UNSAFE_componentWillReceiveProps = function componentWillReceiveProps(nextProps, nextContext) {
     warning_1(!(nextProps.location && !this.props.location), '<Route> elements should not change from uncontrolled to controlled (or vice versa). You initially used no "location" prop and then provided one on a subsequent render.');
 
     warning_1(!(!nextProps.location && this.props.location), '<Route> elements should not change from controlled to uncontrolled (or vice versa). You provided a "location" prop initially but omitted it on a subsequent render.');
@@ -2573,7 +2573,7 @@ var StaticRouter = function (_React$Component) {
     };
   };
 
-  StaticRouter.prototype.componentWillMount = function componentWillMount() {
+  StaticRouter.prototype.UNSAFE_componentWillMount = function componentWillMount() {
     warning_1(!this.props.history, '<StaticRouter> ignores the history prop. To use a custom history, ' + 'use `import { Router }` instead of `import { StaticRouter as Router }`.');
   };
 
@@ -2629,11 +2629,11 @@ var Switch = function (_React$Component) {
     return possibleConstructorReturn(this, _React$Component.apply(this, arguments));
   }
 
-  Switch.prototype.componentWillMount = function componentWillMount() {
+  Switch.prototype.UNSAFE_componentWillMount = function componentWillMount() {
     invariant_1$2(this.context.router, 'You should not use <Switch> outside a <Router>');
   };
 
-  Switch.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+  Switch.prototype.UNSAFE_componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
     warning_1(!(nextProps.location && !this.props.location), '<Switch> elements should not change from uncontrolled to controlled (or vice versa). You initially used no "location" prop and then provided one on a subsequent render.');
 
     warning_1(!(!nextProps.location && this.props.location), '<Switch> elements should not change from controlled to uncontrolled (or vice versa). You provided a "location" prop initially but omitted it on a subsequent render.');

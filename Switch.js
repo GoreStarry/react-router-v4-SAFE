@@ -42,11 +42,11 @@ var Switch = function (_React$Component) {
     return _possibleConstructorReturn(this, _React$Component.apply(this, arguments));
   }
 
-  Switch.prototype.componentWillMount = function componentWillMount() {
+  Switch.prototype.UNSAFE_componentWillMount = function componentWillMount() {
     (0, _invariant2.default)(this.context.router, 'You should not use <Switch> outside a <Router>');
   };
 
-  Switch.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+  Switch.prototype.UNSAFE_componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
     (0, _warning2.default)(!(nextProps.location && !this.props.location), '<Switch> elements should not change from uncontrolled to controlled (or vice versa). You initially used no "location" prop and then provided one on a subsequent render.');
 
     (0, _warning2.default)(!(!nextProps.location && this.props.location), '<Switch> elements should not change from controlled to uncontrolled (or vice versa). You provided a "location" prop initially but omitted it on a subsequent render.');

@@ -69,7 +69,7 @@ var Router = function (_React$Component) {
     };
   };
 
-  Router.prototype.componentWillMount = function componentWillMount() {
+  Router.prototype.UNSAFE_componentWillMount = function componentWillMount() {
     var _this2 = this;
 
     var _props = this.props,
@@ -89,7 +89,7 @@ var Router = function (_React$Component) {
     });
   };
 
-  Router.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+  Router.prototype.UNSAFE_componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
     (0, _warning2.default)(this.props.history === nextProps.history, 'You cannot change <Router history>');
   };
 

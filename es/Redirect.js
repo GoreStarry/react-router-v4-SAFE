@@ -28,7 +28,7 @@ var Redirect = function (_React$Component) {
     return this.context.router && this.context.router.staticContext;
   };
 
-  Redirect.prototype.componentWillMount = function componentWillMount() {
+  Redirect.prototype.UNSAFE_componentWillMount = function componentWillMount() {
     invariant(this.context.router, 'You should not use <Redirect> outside a <Router>');
 
     if (this.isStatic()) this.perform();

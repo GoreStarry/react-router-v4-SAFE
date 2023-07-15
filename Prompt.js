@@ -48,13 +48,13 @@ var Prompt = function (_React$Component) {
     }
   };
 
-  Prompt.prototype.componentWillMount = function componentWillMount() {
+  Prompt.prototype.UNSAFE_componentWillMount = function componentWillMount() {
     (0, _invariant2.default)(this.context.router, 'You should not use <Prompt> outside a <Router>');
 
     if (this.props.when) this.enable(this.props.message);
   };
 
-  Prompt.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
+  Prompt.prototype.UNSAFE_componentWillReceiveProps = function componentWillReceiveProps(nextProps) {
     if (nextProps.when) {
       if (!this.props.when || this.props.message !== nextProps.message) this.enable(nextProps.message);
     } else {

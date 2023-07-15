@@ -119,7 +119,7 @@ var StaticRouter = function (_React$Component) {
     };
   };
 
-  StaticRouter.prototype.componentWillMount = function componentWillMount() {
+  StaticRouter.prototype.UNSAFE_componentWillMount = function componentWillMount() {
     warning(!this.props.history, '<StaticRouter> ignores the history prop. To use a custom history, ' + 'use `import { Router }` instead of `import { StaticRouter as Router }`.');
   };
 
